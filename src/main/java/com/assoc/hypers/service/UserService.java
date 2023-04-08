@@ -24,7 +24,7 @@ public class UserService {
     private RolesRepository roleRepository;
 
     public User registerUser(User user){
-        Roles roles = roleRepository.findById("USER").get();
+        Roles roles = roleRepository.findById("STUDENT").get();
         Set<Roles> rolesSet = new HashSet<>();
         rolesSet.add(roles);
         user.setRoles(rolesSet);
@@ -35,20 +35,20 @@ public class UserService {
 
     public void adminUser(){
         Roles adminRole = new Roles();
-        adminRole.setRoleName("ADMIN");
-        adminRole.setRoleDescription("ADMIN ROLE");
+        adminRole.setRoleName("TEACHER");
+        adminRole.setRoleDescription("TEACHER ROLE");
         roleRepository.save(adminRole);
 
         Roles userRoles = new Roles();
-        userRoles.setRoleName("USER");
-        userRoles.setRoleDescription("USER ROLE");
+        userRoles.setRoleName("STUDENT");
+        userRoles.setRoleDescription("STUDENT ROLE");
         roleRepository.save(userRoles);
 
         User adminUser = new User();
-        adminUser.setUserName("admin2023");
-        adminUser.setUserFirstName("Admin");
+        adminUser.setUserName("teacher2023");
+        adminUser.setUserFirstName("Teacher");
         adminUser.setUserLastName("Hypers");
-        adminUser.setUserPassword(getEncodedPassword("Hypers@2023"));
+        adminUser.setUserPassword(getEncodedPassword("Thypers@2023"));
         Set<Roles> adminRoles = new HashSet<>();
         adminRoles.add(adminRole);
         adminUser.setRoles(adminRoles);
