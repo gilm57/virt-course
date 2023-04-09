@@ -56,7 +56,7 @@ To get started with this project, clone the repository and navigate to the root 
 
 Repository https://github.com/gilm57/virt-course
 
--Java 11 or later
+- Java 11 or later
 - Maven
 - MySQL Workbench
 - Git
